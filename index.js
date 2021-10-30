@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/posts');
 const port = 8000;
 
 //This is how one connects to Mongo using mongoose
@@ -23,6 +24,7 @@ app.use(morgan("common"));
 //Api
 app.use("/api/user", userRoute);
 app.use("/api/auth",authRoute);
+app.use("/api/post",postRoute);
 
 //Runs at port 8000
 app.listen(port,()=>{
